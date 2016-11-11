@@ -32,7 +32,6 @@ class TableViewController: UITableViewController {
         
         coreDataStack.writerContext.perform {
             let path = Bundle.main.url(forResource: "NAV", withExtension: ".txt")
-            var counter = 0
             if let aStreamReader = StreamReader(path: path!.path) {
                 for line in aStreamReader {
                     if !line.contains(";") { continue }
@@ -55,25 +54,12 @@ class TableViewController: UITableViewController {
                     
                     // If tuple is found, fill it. Otherwise create a new one
                     if fetchItem.count > 0 {
-                        continue;
-                        //fetchItem.first?.fill(charSeparatedString: line, separatorString: ";")
+                        fetchItem.first?.fill(charSeparatedString: line, separatorString: ";")
                     }
                     else {
-                        counter += 1
                         let scheme = NSEntityDescription.insertNewObject(forEntityName: "Scheme", into: self.coreDataStack.writerContext) as! Scheme
                         scheme.fill(charSeparatedString: line, separatorString: ";")
                     }
-                    if counter >= 100 {
-                        counter = 0
-                        do {
-                        try self.coreDataStack.writerContext.save()
-                        }
-                        catch {
-                            print("error")
-                        }
-                        self.coreDataStack.writerContext.reset()
-                    }
-                    
                 }
                 aStreamReader.close()
                  do { try self.coreDataStack.writerContext.save() }
