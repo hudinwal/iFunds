@@ -19,6 +19,7 @@
 		1BB53DC41DB16D88006F53C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BB53DC21DB16D88006F53C8 /* LaunchScreen.storyboard */; };
 		1BD1A4EB1DB24BBD00684F56 /* iFundsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD1A4EA1DB24BBD00684F56 /* iFundsTests.swift */; };
 		1BD1A4F31DB255D300684F56 /* DataImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD1A4F21DB255D300684F56 /* DataImporter.swift */; };
+		1BD35D9F1DD5D5DD00BE70DD /* NAV_Few_Entries.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1BD35D9E1DD5D5DD00BE70DD /* NAV_Few_Entries.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		1BD1A4EA1DB24BBD00684F56 /* iFundsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iFundsTests.swift; sourceTree = "<group>"; };
 		1BD1A4EC1DB24BBD00684F56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1BD1A4F21DB255D300684F56 /* DataImporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataImporter.swift; sourceTree = "<group>"; };
+		1BD35D9E1DD5D5DD00BE70DD /* NAV_Few_Entries.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NAV_Few_Entries.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				1BB53DBD1DB16D88006F53C8 /* Main.storyboard */,
 				1BB53DC01DB16D88006F53C8 /* Assets.xcassets */,
 				1B8920841DBD3EB600E890EF /* NAV.txt */,
+				1BD35D9E1DD5D5DD00BE70DD /* NAV_Few_Entries.txt */,
 				1BB53DC21DB16D88006F53C8 /* LaunchScreen.storyboard */,
 				1BB53DC51DB16D88006F53C8 /* Info.plist */,
 			);
@@ -208,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BB53DC41DB16D88006F53C8 /* LaunchScreen.storyboard in Resources */,
+				1BD35D9F1DD5D5DD00BE70DD /* NAV_Few_Entries.txt in Resources */,
 				1BB53DC11DB16D88006F53C8 /* Assets.xcassets in Resources */,
 				1B8920851DBD3EB600E890EF /* NAV.txt in Resources */,
 				1BB53DBF1DB16D88006F53C8 /* Main.storyboard in Resources */,

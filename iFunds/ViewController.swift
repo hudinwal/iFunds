@@ -31,7 +31,7 @@ class TableViewController: UITableViewController {
     func startImportFromBundledFile() {
         
         coreDataStack.writerContext.perform {
-            let path = Bundle.main.url(forResource: "NAV", withExtension: ".txt")
+            let path = Bundle.main.url(forResource: "NAV_Few_Entries", withExtension: ".txt")
             if let aStreamReader = StreamReader(path: path!.path) {
                 for line in aStreamReader {
                     if !line.contains(";") { continue }
