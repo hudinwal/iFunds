@@ -9,9 +9,13 @@
 /* Begin PBXBuildFile section */
 		1B459F391DB1729700275B11 /* SchemeModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1B459F371DB1729700275B11 /* SchemeModel.xcdatamodeld */; };
 		1B459F3C1DB1743600275B11 /* Scheme+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B459F3A1DB1743600275B11 /* Scheme+CoreDataClass.swift */; };
-		1B459F3D1DB1743600275B11 /* Scheme+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B459F3B1DB1743600275B11 /* Scheme+CoreDataProperties.swift */; };
 		1B459F3F1DB176E000275B11 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B459F3E1DB176E000275B11 /* CoreDataStack.swift */; };
 		1B8920851DBD3EB600E890EF /* NAV.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1B8920841DBD3EB600E890EF /* NAV.txt */; };
+		1BA45FF41DDCEBED00A7DE57 /* Scheme+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA45FF31DDCEBED00A7DE57 /* Scheme+CoreDataProperties.swift */; };
+		1BA460151DDCFBE600A7DE57 /* NAV+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA460111DDCFBE600A7DE57 /* NAV+CoreDataClass.swift */; };
+		1BA460161DDCFBE600A7DE57 /* NAV+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA460121DDCFBE600A7DE57 /* NAV+CoreDataProperties.swift */; };
+		1BA460171DDCFBE600A7DE57 /* FundHouse+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA460131DDCFBE600A7DE57 /* FundHouse+CoreDataClass.swift */; };
+		1BA460181DDCFBE600A7DE57 /* FundHouse+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA460141DDCFBE600A7DE57 /* FundHouse+CoreDataProperties.swift */; };
 		1BB53DBA1DB16D88006F53C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB53DB91DB16D88006F53C8 /* AppDelegate.swift */; };
 		1BB53DBC1DB16D88006F53C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB53DBB1DB16D88006F53C8 /* ViewController.swift */; };
 		1BB53DBF1DB16D88006F53C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BB53DBD1DB16D88006F53C8 /* Main.storyboard */; };
@@ -35,9 +39,13 @@
 /* Begin PBXFileReference section */
 		1B459F381DB1729700275B11 /* SchemeModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SchemeModel.xcdatamodel; sourceTree = "<group>"; };
 		1B459F3A1DB1743600275B11 /* Scheme+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Scheme+CoreDataClass.swift"; sourceTree = "<group>"; };
-		1B459F3B1DB1743600275B11 /* Scheme+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Scheme+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1B459F3E1DB176E000275B11 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		1B8920841DBD3EB600E890EF /* NAV.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NAV.txt; sourceTree = "<group>"; };
+		1BA45FF31DDCEBED00A7DE57 /* Scheme+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Scheme+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1BA460111DDCFBE600A7DE57 /* NAV+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NAV+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1BA460121DDCFBE600A7DE57 /* NAV+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NAV+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1BA460131DDCFBE600A7DE57 /* FundHouse+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FundHouse+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1BA460141DDCFBE600A7DE57 /* FundHouse+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FundHouse+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1BB53DB61DB16D88006F53C8 /* iFunds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iFunds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BB53DB91DB16D88006F53C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1BB53DBB1DB16D88006F53C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -107,8 +115,12 @@
 		1BB53DCB1DB16D8C006F53C8 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				1BA460111DDCFBE600A7DE57 /* NAV+CoreDataClass.swift */,
+				1BA460121DDCFBE600A7DE57 /* NAV+CoreDataProperties.swift */,
+				1BA460131DDCFBE600A7DE57 /* FundHouse+CoreDataClass.swift */,
+				1BA460141DDCFBE600A7DE57 /* FundHouse+CoreDataProperties.swift */,
 				1B459F3A1DB1743600275B11 /* Scheme+CoreDataClass.swift */,
-				1B459F3B1DB1743600275B11 /* Scheme+CoreDataProperties.swift */,
+				1BA45FF31DDCEBED00A7DE57 /* Scheme+CoreDataProperties.swift */,
 				1B459F371DB1729700275B11 /* SchemeModel.xcdatamodeld */,
 				1B459F3E1DB176E000275B11 /* CoreDataStack.swift */,
 				1BD1A4F21DB255D300684F56 /* DataImporter.swift */,
@@ -175,7 +187,7 @@
 				TargetAttributes = {
 					1BB53DB51DB16D88006F53C8 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 3WG479C5TW;
+						DevelopmentTeam = Z3QQ492P6Z;
 						ProvisioningStyle = Automatic;
 					};
 					1BD1A4E71DB24BBD00684F56 = {
@@ -233,12 +245,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BB53DBC1DB16D88006F53C8 /* ViewController.swift in Sources */,
-				1B459F3D1DB1743600275B11 /* Scheme+CoreDataProperties.swift in Sources */,
+				1BA45FF41DDCEBED00A7DE57 /* Scheme+CoreDataProperties.swift in Sources */,
 				1BD1A4F31DB255D300684F56 /* DataImporter.swift in Sources */,
+				1BA460151DDCFBE600A7DE57 /* NAV+CoreDataClass.swift in Sources */,
+				1BA460181DDCFBE600A7DE57 /* FundHouse+CoreDataProperties.swift in Sources */,
+				1BA460161DDCFBE600A7DE57 /* NAV+CoreDataProperties.swift in Sources */,
 				1BB53DBA1DB16D88006F53C8 /* AppDelegate.swift in Sources */,
 				1B459F3F1DB176E000275B11 /* CoreDataStack.swift in Sources */,
 				1B459F3C1DB1743600275B11 /* Scheme+CoreDataClass.swift in Sources */,
 				1B459F391DB1729700275B11 /* SchemeModel.xcdatamodeld in Sources */,
+				1BA460171DDCFBE600A7DE57 /* FundHouse+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,11 +391,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3WG479C5TW;
+				DEVELOPMENT_TEAM = Z3QQ492P6Z;
 				INFOPLIST_FILE = iFunds/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.organization.iFunds;
+				PRODUCT_BUNDLE_IDENTIFIER = com.infoedge.iFunds;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -389,11 +405,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3WG479C5TW;
+				DEVELOPMENT_TEAM = Z3QQ492P6Z;
 				INFOPLIST_FILE = iFunds/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.organization.iFunds;
+				PRODUCT_BUNDLE_IDENTIFIER = com.infoedge.iFunds;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="16A323" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16B2555" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="FundHouse" representedClassName=".FundHouse" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="managesSchemes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Scheme" inverseName="belongsToFundHouse" inverseEntity="Scheme" syncable="YES"/>
+    </entity>
+    <entity name="NAV" representedClassName=".NAV" syncable="YES">
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="nav" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="forScheme" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Scheme" inverseName="navs" inverseEntity="Scheme" syncable="YES"/>
+    </entity>
     <entity name="Scheme" representedClassName=".Scheme" syncable="YES">
-        <attribute name="schemeCode" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="schemeName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="schemeType" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="schemeCode" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="schemeName" attributeType="String" syncable="YES"/>
+        <attribute name="schemeType" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="belongsToFundHouse" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FundHouse" inverseName="managesSchemes" inverseEntity="FundHouse" syncable="YES"/>
+        <relationship name="navs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NAV" inverseName="forScheme" inverseEntity="NAV" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Scheme" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="Scheme" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="FundHouse" positionX="178" positionY="135" width="128" height="73"/>
+        <element name="NAV" positionX="63" positionY="90" width="128" height="90"/>
     </elements>
 </model>

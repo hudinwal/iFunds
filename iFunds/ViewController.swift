@@ -18,56 +18,102 @@ class TableViewController: UITableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         navigationItem.title = "Mutual Funds"
-
+        
         setUpCoreDataStack()
     }
     
     func setUpCoreDataStack() {
         coreDataStack = CoreDataStack(callBack: {
             print("Core Data Setup Done")
+            self.setUpFetchController()
             self.startImportFromBundledFile()
         })
     }
     func startImportFromBundledFile() {
-        
-        coreDataStack.writerContext.perform {
-            let path = Bundle.main.url(forResource: "NAV_Few_Entries", withExtension: ".txt")
-            if let aStreamReader = StreamReader(path: path!.path) {
-                for line in aStreamReader {
-                    if !line.contains(";") { continue }
-                    print(line)
-                    // Check if tuple exists
+        coreDataStack.newBatchOperationContext { (context:NSManagedObjectContext?) in
+            guard let context = context else { return }
+            context.perform {
+                let path = Bundle.main.url(forResource: "NAV", withExtension: ".txt")
+                if let aStreamReader = StreamReader(path: path!.path) {
                     
-                    // Get the scheme code from line
-                    let componenets = line.components(separatedBy: ";")
-                    let schemeCode = componenets[0]
+                    _ = aStreamReader.nextLine()
                     
-                    // Create a fetch request to find tuple with scheme code
-                    let fetchRequest: NSFetchRequest<Scheme> = Scheme.fetchRequest()
-                    fetchRequest.predicate = NSPredicate(format: "schemeCode ==  %d", String(schemeCode))
-                    fetchRequest.fetchLimit = 1
-                    
-                    // Do the fetching
-                    var fetchItem: [Scheme]!
-                    do { fetchItem = try self.coreDataStack.writerContext.fetch(fetchRequest) }
-                    catch { print("Exception"); continue }
-                    
-                    // If tuple is found, fill it. Otherwise create a new one
-                    if fetchItem.count > 0 {
-                        fetchItem.first?.fill(charSeparatedString: line, separatorString: ";")
+                    var schemeType: String = ""
+                    var schemeFundHouse:FundHouse?
+                    for line in aStreamReader
+                    {
+                        if line == "\r" {
+                            continue
+                        }
+                        if line.contains("("), line.contains(")"),!line.contains(";") {
+                            schemeType = line
+                            continue
+                        }
+                        if !line.contains(";") {
+                            if schemeFundHouse != nil {
+                                if let fundHouseName = schemeFundHouse?.name, fundHouseName != line {
+                                    
+                                    // Create a fetch request to find tuple with scheme code
+                                    let fetchRequest: NSFetchRequest<FundHouse> = FundHouse.fetchRequest()
+                                    fetchRequest.predicate = NSPredicate(format: "name ==  %@", line)
+                                    fetchRequest.fetchLimit = 1
+                                    
+                                    // Do the fetching
+                                    var fetchItem: [FundHouse]!
+                                    do { fetchItem = try context.fetch(fetchRequest) }
+                                    catch { print("Exception"); continue }
+                                    
+                                    // If tuple is found, fill it. Otherwise create a new one
+                                    if fetchItem.count > 0 {
+                                        schemeFundHouse = fetchItem.first
+                                    }
+                                    else {
+                                        schemeFundHouse = NSEntityDescription.insertNewObject(forEntityName: "FundHouse", into: context) as? FundHouse
+                                        schemeFundHouse?.name = line
+                                    }
+                                }
+                            }
+                            else {
+                                // Create a fetch request to find tuple with scheme code
+                                let fetchRequest: NSFetchRequest<FundHouse> = FundHouse.fetchRequest()
+                                fetchRequest.predicate = NSPredicate(format: "name ==  %@", line)
+                                fetchRequest.fetchLimit = 1
+                                
+                                // Do the fetching
+                                var fetchItem: [FundHouse]!
+                                do { fetchItem = try context.fetch(fetchRequest) }
+                                catch { print("Exception"); continue }
+                                
+                                // If tuple is found, fill it. Otherwise create a new one
+                                if fetchItem.count > 0 {
+                                    schemeFundHouse = fetchItem.first
+                                }
+                                else {
+                                    schemeFundHouse = NSEntityDescription.insertNewObject(forEntityName: "FundHouse", into: context) as? FundHouse
+                                    schemeFundHouse?.name = line
+                                }
+                            }
+                        }
+                        else {
+                            let scheme = NSEntityDescription.insertNewObject(forEntityName: "Scheme", into: context) as! Scheme
+                            scheme.fill(charSeparatedString: line, separatorString: ";")
+                            scheme.schemeType = schemeType
+                            scheme.belongsToFundHouse = schemeFundHouse
+                        }
                     }
-                    else {
-                        let scheme = NSEntityDescription.insertNewObject(forEntityName: "Scheme", into: self.coreDataStack.writerContext) as! Scheme
-                        scheme.fill(charSeparatedString: line, separatorString: ";")
+                    aStreamReader.close()
+                    do {
+                        try context.save()
+                        self.fetchRequestController?.managedObjectContext.perform {
+                            do { try self.fetchRequestController?.performFetch() }
+                            catch { print("Error") }
+                            self.tableView.reloadData()
+                        }
                     }
+                    catch { print("Error") }
                 }
-                aStreamReader.close()
-                 do { try self.coreDataStack.writerContext.save() }
-                 catch { print("Caught Someting") }
             }
         }
-        
-        setUpFetchController()
     }
     
     func setUpFetchController() {
@@ -123,6 +169,15 @@ extension TableViewController: NSFetchedResultsControllerDelegate {
     }
     
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        var itemsCount = 0
+        let sections = controller.sections
+        if let sections = sections {
+            let sectionInfo = sections[0]
+            itemsCount = sectionInfo.numberOfObjects
+        }
+        
+        self.navigationItem.title = "\(itemsCount) Funds"
+        
         switch type {
         case .insert:
             tableView.insertRows(at:[newIndexPath!], with: .fade)
