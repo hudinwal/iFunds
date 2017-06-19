@@ -27,7 +27,20 @@ class TableViewController: UITableViewController {
             print("Core Data Setup Done")
             self.setUpFetchController()
             self.startImportFromBundledFile()
+            //self.startReportDownload()
         })
+    }
+    
+    func startReportDownload() {
+        let url = URL.urlToFindNAVs(fromDate: Date.init(timeInterval: -(60*60*24*365), since: Date()), toDate: Date())
+        let fileURL = URL.fileURL(fileName: "07-Nov-2016.txt")
+        let downloader = ReportDownloader()
+        if let url = url, let fileURL = fileURL {
+            downloader.downloadReportToDisk(url: url, fileURL: fileURL, callBack: { (success: Bool) in
+                // Files saved at location
+            })
+        }
+        
     }
     func startImportFromBundledFile() {
         coreDataStack.newBatchOperationContext { (context:NSManagedObjectContext?) in

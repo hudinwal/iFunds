@@ -10,7 +10,9 @@
 		1B459F391DB1729700275B11 /* SchemeModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1B459F371DB1729700275B11 /* SchemeModel.xcdatamodeld */; };
 		1B459F3C1DB1743600275B11 /* Scheme+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B459F3A1DB1743600275B11 /* Scheme+CoreDataClass.swift */; };
 		1B459F3F1DB176E000275B11 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B459F3E1DB176E000275B11 /* CoreDataStack.swift */; };
+		1B6B9E541DDD852E00E6AC5F /* URLGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6B9E531DDD852E00E6AC5F /* URLGenerator.swift */; };
 		1B8920851DBD3EB600E890EF /* NAV.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1B8920841DBD3EB600E890EF /* NAV.txt */; };
+		1B9FE0931DDDA4D000CB8B6E /* ReportDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9FE0921DDDA4D000CB8B6E /* ReportDownloader.swift */; };
 		1BA45FF41DDCEBED00A7DE57 /* Scheme+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA45FF31DDCEBED00A7DE57 /* Scheme+CoreDataProperties.swift */; };
 		1BA460151DDCFBE600A7DE57 /* NAV+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA460111DDCFBE600A7DE57 /* NAV+CoreDataClass.swift */; };
 		1BA460161DDCFBE600A7DE57 /* NAV+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA460121DDCFBE600A7DE57 /* NAV+CoreDataProperties.swift */; };
@@ -23,7 +25,6 @@
 		1BB53DC41DB16D88006F53C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BB53DC21DB16D88006F53C8 /* LaunchScreen.storyboard */; };
 		1BD1A4EB1DB24BBD00684F56 /* iFundsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD1A4EA1DB24BBD00684F56 /* iFundsTests.swift */; };
 		1BD1A4F31DB255D300684F56 /* DataImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD1A4F21DB255D300684F56 /* DataImporter.swift */; };
-		1BD35D9F1DD5D5DD00BE70DD /* NAV_Few_Entries.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1BD35D9E1DD5D5DD00BE70DD /* NAV_Few_Entries.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +41,9 @@
 		1B459F381DB1729700275B11 /* SchemeModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SchemeModel.xcdatamodel; sourceTree = "<group>"; };
 		1B459F3A1DB1743600275B11 /* Scheme+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Scheme+CoreDataClass.swift"; sourceTree = "<group>"; };
 		1B459F3E1DB176E000275B11 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		1B6B9E531DDD852E00E6AC5F /* URLGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLGenerator.swift; sourceTree = "<group>"; };
 		1B8920841DBD3EB600E890EF /* NAV.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NAV.txt; sourceTree = "<group>"; };
+		1B9FE0921DDDA4D000CB8B6E /* ReportDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportDownloader.swift; sourceTree = "<group>"; };
 		1BA45FF31DDCEBED00A7DE57 /* Scheme+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Scheme+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1BA460111DDCFBE600A7DE57 /* NAV+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NAV+CoreDataClass.swift"; sourceTree = "<group>"; };
 		1BA460121DDCFBE600A7DE57 /* NAV+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NAV+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -57,7 +60,6 @@
 		1BD1A4EA1DB24BBD00684F56 /* iFundsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iFundsTests.swift; sourceTree = "<group>"; };
 		1BD1A4EC1DB24BBD00684F56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1BD1A4F21DB255D300684F56 /* DataImporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataImporter.swift; sourceTree = "<group>"; };
-		1BD35D9E1DD5D5DD00BE70DD /* NAV_Few_Entries.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NAV_Few_Entries.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +107,6 @@
 				1BB53DBD1DB16D88006F53C8 /* Main.storyboard */,
 				1BB53DC01DB16D88006F53C8 /* Assets.xcassets */,
 				1B8920841DBD3EB600E890EF /* NAV.txt */,
-				1BD35D9E1DD5D5DD00BE70DD /* NAV_Few_Entries.txt */,
 				1BB53DC21DB16D88006F53C8 /* LaunchScreen.storyboard */,
 				1BB53DC51DB16D88006F53C8 /* Info.plist */,
 			);
@@ -124,6 +125,8 @@
 				1B459F371DB1729700275B11 /* SchemeModel.xcdatamodeld */,
 				1B459F3E1DB176E000275B11 /* CoreDataStack.swift */,
 				1BD1A4F21DB255D300684F56 /* DataImporter.swift */,
+				1B6B9E531DDD852E00E6AC5F /* URLGenerator.swift */,
+				1B9FE0921DDDA4D000CB8B6E /* ReportDownloader.swift */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -223,7 +226,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BB53DC41DB16D88006F53C8 /* LaunchScreen.storyboard in Resources */,
-				1BD35D9F1DD5D5DD00BE70DD /* NAV_Few_Entries.txt in Resources */,
 				1BB53DC11DB16D88006F53C8 /* Assets.xcassets in Resources */,
 				1B8920851DBD3EB600E890EF /* NAV.txt in Resources */,
 				1BB53DBF1DB16D88006F53C8 /* Main.storyboard in Resources */,
@@ -251,9 +253,11 @@
 				1BA460181DDCFBE600A7DE57 /* FundHouse+CoreDataProperties.swift in Sources */,
 				1BA460161DDCFBE600A7DE57 /* NAV+CoreDataProperties.swift in Sources */,
 				1BB53DBA1DB16D88006F53C8 /* AppDelegate.swift in Sources */,
+				1B6B9E541DDD852E00E6AC5F /* URLGenerator.swift in Sources */,
 				1B459F3F1DB176E000275B11 /* CoreDataStack.swift in Sources */,
 				1B459F3C1DB1743600275B11 /* Scheme+CoreDataClass.swift in Sources */,
 				1B459F391DB1729700275B11 /* SchemeModel.xcdatamodeld in Sources */,
+				1B9FE0931DDDA4D000CB8B6E /* ReportDownloader.swift in Sources */,
 				1BA460171DDCFBE600A7DE57 /* FundHouse+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
